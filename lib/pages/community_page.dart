@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './community/community_tabbar.dart';
-import './community/community_score.dart';
 
 class CommunityPage extends StatelessWidget {
   @override

@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
       home: IndexPage(),
       theme: ThemeData(
           primarySwatch: Colors.yellow,
-          highlightColor: Colors.yellow[300],
-          splashColor: Colors.yellow[400]),
+          highlightColor: Colors.yellow[600],
+          splashColor: Colors.yellow[600]),
       onGenerateRoute: onGenerateRoute,
     );
   }

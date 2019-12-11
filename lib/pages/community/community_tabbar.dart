@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../community/community_score.dart';
-import './Tabs/teacher_quetion.dart';
+import 'Tabs/teacher_ask/teacher_quetion.dart';
 import './Tabs/colloquy.dart';
 import './Tabs/bulletin.dart';
 
@@ -9,7 +9,7 @@ class ComTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500.0,
+      height: ScreenUtil().setHeight(1334),
       child: MyTabbedPage(),
     );
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learning_community/pages/home_page.dart';
 import '../pages/community/Tabs.dart';
-import '../pages/community/Tabs/teacher_quetion.dart';
+import '../pages/community/Tabs/teacher_ask/teacher_quetion.dart';
+import '../pages/community/Tabs/teacher_ask/teacher_answer.dart';
 
 //配置路由
 final routes = {
@@ -9,7 +10,8 @@ final routes = {
   '/home':(context)=>HomePage(),
   '/community/teacherQue': (context) => TeacherQue(),
   '/colloquy': (context) => Colloquy(),
-  '/bulltin': (context) => Bulletin()
+  '/bulltin': (context) => Bulletin(),
+  '/answer':(context) => TeacherAsk()
 };
 
 var onGenerateRoute=(RouteSettings settings) {
