@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
       title: '学习平台',
       home: IndexPage(),
       theme: ThemeData(
-          primarySwatch: Colors.yellow,
-          highlightColor: Colors.yellow[600],
-          splashColor: Colors.yellow[600]),
+          primarySwatch: Colors.amber,
+          highlightColor: Colors.amber[300],
+          splashColor: Colors.amber[300]),
       onGenerateRoute: onGenerateRoute,
     );
   }

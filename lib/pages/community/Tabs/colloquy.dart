@@ -149,23 +149,40 @@ class Comment extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: EdgeInsets.all(10),
-            child: TextFormField(
-              keyboardType: TextInputType.text,
-              minLines: 3,
-              maxLines: 100,
-              decoration: InputDecoration(
-                errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
-                    borderRadius: BorderRadius.all(Radius.circular(5))),
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(5))),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue),
-                    borderRadius: BorderRadius.all(Radius.circular(5))),
-              ),
-              controller: _controller,
-            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                TextFormField(
+                  autofocus: true,
+                  keyboardType: TextInputType.text,
+                  minLines: 3,
+                  maxLines: 100,
+                  decoration: InputDecoration(
+                    errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                  ),
+                  controller: _controller,
+                ),
+                RaisedButton(
+                  onPressed: (){
+
+                  },
+                  child: Text('回复'),
+                  color: Colors.yellow[800],
+                  textColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15))
+                  )
+                )
+              ],
+            )
           ),
         ],
       )),
@@ -176,6 +193,7 @@ class Comment extends StatelessWidget {
   Widget _replyList(List list) {
     return ListView.builder(
       shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
       itemCount: list.length,
       scrollDirection: Axis.vertical,
@@ -192,8 +210,16 @@ class Comment extends StatelessWidget {
                     backgroundImage: NetworkImage(list[index]['avator']),
                   ),
                   title: Text('${list[index]['name']}'),
-                  subtitle: Text('${list[index]['content']}'),
+                  subtitle: Text('${list[index]['content']}',style: TextStyle(fontSize: ScreenUtil().setSp(26)),),
                 ),
+                list[index]['isReply'] == true ?  ListTile(
+                  contentPadding: EdgeInsets.only(left: 50),
+        leading: CircleAvatar(
+        backgroundImage: NetworkImage(list[index]['reply'][0]['avator']),
+        ),
+        title: Text('${list[index]['reply'][0]['name']}'),
+        subtitle: Text('${list[index]['reply'][0]['content']}',style: TextStyle(fontSize: ScreenUtil().setSp(26)),),
+        ) : Container(height: 0,)
               ]),
           decoration: BoxDecoration(
               color: Colors.white,

@@ -149,6 +149,7 @@ class _TeacherAskState extends State<TeacherAsk>
       elevation: 0,
       child: Form(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
             margin: EdgeInsets.all(10),
@@ -170,6 +171,17 @@ class _TeacherAskState extends State<TeacherAsk>
               controller: _controller,
             ),
           ),
+          RaisedButton(
+              onPressed: (){
+                
+              },
+              child: Text('回复'),
+              color: Colors.yellow[800],
+              textColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15))
+              )
+          )
         ],
       )),
     );

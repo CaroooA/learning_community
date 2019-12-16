@@ -25,7 +25,6 @@ class _TeacherQueState extends State<TeacherQue>
           if (snapshot.hasData) {
             var data = json.decode(snapshot.data.toString());
             list = (data['data'] as List);
-            print(list[1]['answer']);
             return Container(
               child: ListView.builder(
                 controller: _scrollController,

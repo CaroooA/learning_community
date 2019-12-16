@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learning_community/pages/home_page.dart';
-import '../pages/community/Tabs.dart';
+import 'package:learning_community/pages/community/Tabs/colloquy.dart';
+import 'package:learning_community/pages/community/Tabs/bulletin.dart';
 import '../pages/community/Tabs/teacher_ask/teacher_quetion.dart';
 import '../pages/community/Tabs/teacher_ask/teacher_answer.dart';
 
